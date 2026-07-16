@@ -68,4 +68,4 @@ Open your web browser and navigate to:
 4. **Purge**: Use the Purge button to completely erase the data once communication is complete.
 
 ---
-*Developed with ❤️ for Secure Communication by Antigravity AI.*
+*Developed with ❤️ for Secure Communication*
