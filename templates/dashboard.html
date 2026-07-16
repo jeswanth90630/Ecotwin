@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-container">
+    <div class="container" style="padding-top: 10vw;">
+        <div class="text-center" data-aos="fade-down" style="margin-bottom: 4rem;">
+            <h1 class="section-title">Decode <span class="accent-text">Section</span></h1>
+            <p class="section-subtitle">Identify and extract hidden intel from your encrypted visual carriers.</p>
+        </div>
+
+        {% if images %}
+            <div class="vault-grid">
+                {% for image in images %}
+                <div class="card image-card" data-aos="zoom-in" data-aos-delay="{{ 100 * loop.index }}">
+                    <img src="/static/uploads/encoded/{{ image['image_name'] }}" alt="Encoded Image" loading="lazy" class="blurred-vault-img">
+                    <div class="image-overlay">
+                        <div style="flex: 1; padding-right: 1.5rem;">
+                            <h3 style="color: var(--soft); margin-bottom: 0.3rem; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; font-size: 1.4rem;">{{ image['display_name'] or 'Unnamed Asset' }}</h3>
+                            <p style="color: var(--neon); font-size: 0.8rem; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;">ID CODE: #STG-0{{ image['id'] }}</p>
+                        </div>
+                        <a href="/access/{{ image['id'] }}" class="btn-primary access-btn-large">
+                            <i class="fas fa-unlock-alt"></i> OPEN DECODE PORTAL
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="card text-center" style="margin-top: 5rem; padding: 5rem; background: rgba(11, 14, 20, 0.6);" data-aos="fade-up">
+                <i class="fas fa-ghost fa-4x" style="color: var(--neon); margin-bottom: 2rem; opacity: 0.3;"></i>
+                <h3>No Encrypted Assets Detected</h3>
+                <p>Your decryption archive is empty. Begin by encoding new high-integrity assets.</p>
+                <a href="/encode" class="btn-primary" style="margin-top: 2rem;">
+                    <i class="fas fa-plus-circle"></i> INITIATE ENCODING
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+    .page-container {
+        min-height: 100vh;
+        perspective: 1200px;
+        background: radial-gradient(circle at center, rgba(11, 10, 9, 0.95), rgba(11, 10, 9, 0.85)),
+                    url('/static/img/vault-bg.png') no-repeat center center/cover;
+    }
+
+    .image-card {
+        padding: 0;
+        overflow: hidden;
+        border-radius: 24px;
+        background: rgba(11, 10, 9, 0.82);
+        border: 2px solid var(--glass-border);
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease, border-color 0.6s ease;
+        transform-style: preserve-3d;
+    }
+    
+    .image-card:hover {
+        transform: rotateY(-10deg) rotateX(5deg) scale(1.03);
+        border-color: var(--neon);
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 159, 0, 0.15);
+    }
+    
+    .blurred-vault-img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        filter: blur(25px);
+        transition: all 0.6s ease;
+    }
+    
+    .image-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 2.5rem;
+        background: linear-gradient(to top, rgba(11, 10, 9, 1) 0%, rgba(11, 10, 9, 0.8) 60%, transparent 100%);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        transform: translateZ(30px); /* 3D pop effect */
+    }
+    
+    .access-btn-large {
+        width: 100%;
+        justify-content: center;
+        background: var(--neon);
+        color: var(--deep) !important;
+        font-weight: 800;
+        font-size: 1.1rem;
+        padding: 1.2rem;
+        box-shadow: 0 10px 30px rgba(255, 159, 0, 0.3);
+    }
+    
+    .access-btn-large:hover {
+        background: var(--white);
+        transform: translateZ(50px) translateY(-5px);
+    }
+</style>
+{% endblock %}
