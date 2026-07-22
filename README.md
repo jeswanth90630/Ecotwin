@@ -2,20 +2,22 @@
 
 <br/>
 
-<h1>🌾 Krishi-AI</h1>
+<h1>🌱 Krishi-AI</h1>
 
-<h3><em>Secure. Hidden. Invisible.</em></h3>
+<h3><em>AI-Powered Digital Twin & Planetary Sustainability Intelligence Platform</em></h3>
 
-<p>A dual-layer security system combining <strong>AES-256 encryption</strong> and <strong>LSB steganography</strong><br/>to hide encrypted messages invisibly inside ordinary images.</p>
+<p>A full-stack AI platform that monitors, simulates, and forecasts<br/>the environmental health of 50+ nations and 15+ global cities in real time.</p>
 
 <br/>
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![Pillow](https://img.shields.io/badge/Pillow-12.x-yellow?style=for-the-badge&logo=python&logoColor=white)](https://pillow.readthedocs.io/)
-[![PyCryptodome](https://img.shields.io/badge/PyCryptodome-AES--256-red?style=for-the-badge)](https://pycryptodome.readthedocs.io/)
-[![SQLite](https://img.shields.io/badge/SQLite-3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
-[![bcrypt](https://img.shields.io/badge/bcrypt-5.x-4A90D9?style=for-the-badge)](https://pypi.org/project/bcrypt/)
+[![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Hono](https://img.shields.io/badge/Hono-4.x-FF6B35?style=for-the-badge&logo=hono&logoColor=white)](https://hono.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Deploy-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Gemini AI](https://img.shields.io/badge/Gemini_1.5_Flash-AI_Engine-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![License](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)](LICENSE)
 
 <br/>
 
@@ -26,18 +28,18 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
-- [The Problem](#-the-problem-it-solves)
-- [How It Works](#-how-it-works)
+- [The Problem Krishi-AI Addresses](#-the-problem-krishi-ai-addresses)
+- [Solution](#-solution--what-krishi-ai-delivers)
 - [Key Features](#-key-features)
-- [Architecture](#-architecture--data-flow)
+- [How It Works](#-how-it-works)
+- [Architecture & Data Flow](#-architecture--data-flow)
 - [Technology Stack](#-technology-stack)
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [How to Run](#-how-to-run)
-- [Usage](#-usage)
-- [Screenshots / Demo](#-screenshots--demo)
+- [Environment Setup](#-environment-setup)
+- [How to Run & Build](#-how-to-run--build)
+- [API Reference](#-api-reference)
+- [Screenshots & Demo](#-screenshots--demo)
 - [Known Limitations](#-known-limitations)
 - [Future Improvements](#-future-improvements)
 - [Contributing](#-contributing)
@@ -45,109 +47,143 @@
 
 ---
 
-## 🌾 Overview
+## 🌍 Overview
 
-**Krishi-AI** is a web-based steganographic communication system that allows users to **hide AES-256 encrypted messages inside PNG/JPG images** using LSB (Least Significant Bit) steganography — making the hidden message completely invisible to the human eye.
+**Krishi-AI** is a high-performance, AI-driven sustainability intelligence platform engineered for environmental telemetry, multi-scenario simulation, and climate policy optimization.
 
-The platform also provides a **Secure Vault** — a password-protected dashboard to store, access, and decode all encoded images.
+Built as an edge-compatible full-stack web application powered by **Hono**, **TypeScript**, and **Vite**, Krishi-AI aggregates real-time telemetry from multiple global environmental APIs, applies neural simulation models (LSTM, RL, SHAP, Anomaly Detection), and delivers actionable analytics via hardware-accelerated 3D WebGL visualizations and interactive dashboards.
 
-> **Recruiter Summary:** Built a full-stack Flask application that implements dual-layer security (AES-256 + LSB steganography) from scratch, with a SQLite vault for asset management, bcrypt-hashed access control, and an animated dark-mode web UI.
+> **Recruiter 30-Second Summary:**
+> **Krishi-AI** → Aggregates live weather, air quality, NASA disaster telemetry, and carbon market data → Runs 10-year LSTM neural simulations and Deep Q-Network RL policy optimization → Integrates Google Gemini 1.5 Flash for live-context AI Q&A → Deploys seamlessly to Cloudflare Pages edge network.
 
 ---
 
-## ❗ The Problem It Solves
+## ❗ The Problem Krishi-AI Addresses
 
-Standard encryption is secure but *visible* — anyone can see that a message has been encrypted and target it. **Steganography** solves this by hiding the very existence of the message.
+Global environmental data is fragmented, locked behind siloed databases, and rarely decision-ready. Policymakers, sustainability analysts, and researchers face critical challenges:
 
-Krishi-AI combines **both** techniques:
+- **Data Fragmentation:** Weather, air quality, carbon pricing, and disaster events live in separate isolated systems.
+- **Lack of Predictive Tools:** Traditional dashboards display static historical numbers without forward-looking AI simulation capabilities.
+- **Black-Box AI Decisions:** Machine learning outputs often lack explainability, making them hard to trust for policy planning.
+- **Complex Interventions:** Measuring the impact of policy changes (e.g., carbon tax vs. renewable energy mandates) requires complex multi-variable modeling.
 
-| Challenge | Krishi-AI Solution |
+---
+
+## ✅ Solution — What Krishi-AI Delivers
+
+Krishi-AI solves these problems through an integrated digital twin architecture:
+
+| Problem | Krishi-AI Solution |
 |---|---|
-| Encrypted messages are obvious targets | LSB steganography makes the message invisible inside an image |
-| Steganography without encryption is readable if detected | AES-256 encryption ensures message confidentiality even if image is extracted |
-| No persistent storage for encoded images | SQLite vault with bcrypt-secured password per image |
-| Poor UX for cryptographic tools | Premium dark-mode web interface with animations and flash feedback |
-
----
-
-## 🔄 How It Works
-
-```
-User writes a secret message + sets two passwords
-        │
-        ▼
-AES-256 Encryption (PyCryptodome, CBC Mode)
- Password → SHA-256 → 256-bit key
- Message → Padded → Encrypted → Base64 encoded
-        │
-        ▼
-LSB Steganography (Pillow)
- Encrypted message → Binary string (8 bits/char)
- Binary bits → Overwrite Least Significant Bit of each RGB channel
- Delimiter (16-bit) appended to mark message end
-        │
-        ▼
-Encoded Image saved to disk + stored in SQLite vault
- (access_password bcrypt-hashed, encrypted_data stored)
-        │
-        ▼
-Secure Vault (Dashboard)
- Browse stored images → Enter Access Password
-        │
-        ▼
-Extraction + Decryption
- LSB bits extracted → Binary → encrypted string
- Encryption Password → SHA-256 → AES-256 decrypt
-        │
-        ▼
-Original Message Recovered
-```
+| Isolated climate datasets | Live API aggregation: Open-Meteo Weather & AQI, REST Countries, NASA EONET |
+| Static non-predictive views | LSTM Neural Simulator predicting 10-year environmental trajectories with confidence bands |
+| Black-box ML models | SHAP (Shapley Additive exPlanations) game-theoretic feature attribution |
+| Complex policy trade-offs | Interactive Policy Sandbox calculating cost, job creation, and score deltas |
+| Generic AI assistants | Gemini 1.5 Flash AI chatbot dynamically injected with real-time live system metrics |
+| Heavy server infrastructure | Lightweight Hono architecture deployable to edge networks (Cloudflare Pages) |
 
 ---
 
 ## ✨ Key Features
 
 <details>
-<summary><strong>🔐 Dual-Layer Security</strong></summary>
+<summary><strong>📊 Mission Control & Visualization</strong></summary>
 
-- **AES-256 Encryption (CBC Mode)** — Message is encrypted using a SHA-256 derived key before steganography
-- **LSB Steganography** — Encrypted binary data is distributed across the Least Significant Bits of R, G, B channels
-- **Dual Password System** — Separate `access_password` (bcrypt-hashed, for vault access) and `encryption_password` (for AES decryption)
-- **bcrypt Hashing** — Access passwords are never stored in plaintext
-
-</details>
-
-<details>
-<summary><strong>🗄️ Secure Image Vault</strong></summary>
-
-- **SQLite Database** — All encoded images tracked with metadata (name, path, hashed password)
-- **Password-Protected Access** — Each image requires its unique access password to open
-- **Named Assets** — Each encoded image can have a custom display name
-- **Delete with Authentication** — Images can only be deleted after verifying the access password
+- **Real-Time Telemetry Dashboard** — Live micro-trend monitors for Energy, Water, Traffic, Air Quality (AQI), Noise, and Temperature.
+- **Interactive World Map** — High-performance choropleth mapping covering 50+ nations with instant drill-down metrics.
+- **3D Interactive Globe (Three.js WebGL)** — Immersive hardware-accelerated planetary visualization.
+- **Carbon Market Pulse** — Live tracking of the EU Emissions Trading System (EU ETS) carbon credit pricing and renewable vs. fossil indices.
+- **Atmospheric CO₂ Telemetry** — Live atmospheric CO₂ ppm model matching real-world NOAA Mauna Loa trendlines.
+- **Persistent Viewport Tickers** — Fixed telemetry bars providing persistent updates for critical planetary vitals.
 
 </details>
 
 <details>
-<summary><strong>🎨 Web Interface</strong></summary>
+<summary><strong>🤖 Advanced Neural Analyzers & AI Models</strong></summary>
 
-- **Dark Synthwave UI** — Deep black background with amber/orange neon accent colors
-- **AOS Scroll Animations** — Cards and sections animate on scroll via AOS.js
-- **SweetAlert2 Flash Messages** — Beautiful modal-style alerts for encode success/error
-- **Responsive Navbar** — Scrolled blur effect, mobile-compatible
-- **Chart.js Analytics** — Security insights chart on the homepage
-- **Password Toggle** — Eye icon to show/hide passwords on all forms
+- **LSTM Neural Projection Engine** — 10-year forecasting engine projecting score trajectories, CO₂ trends, and confidence interval bounds.
+- **RL Policy Optimizer (DQN)** — Deep Q-Network reinforcement learning agent simulating policy iterations to discover optimal regional pathways.
+- **SHAP Explainable AI** — Game-theoretic feature attribution breaking down exact contribution weights of key sustainability drivers.
+- **Anomaly Detection Radar** — Variance heuristic engine identifying environmental outliers (industrial spikes, catastrophic events) with severity scoring (LOW, MEDIUM, HIGH, CRITICAL).
+- **Gemini 1.5 Flash AI Assistant** — Multilingual conversational AI (9 languages) injected with live system context (CO₂ ppm, carbon price, top-performing countries).
 
 </details>
 
 <details>
-<summary><strong>📦 Flask Backend</strong></summary>
+<summary><strong>🛰️ Satellite Intelligence & Disaster Hub</strong></summary>
 
-- **5 Routes** — `/` (home), `/encode`, `/dashboard`, `/access/<id>`, `/decode/<id>`, `/delete/<id>`
-- **File Upload Handling** — `werkzeug.utils.secure_filename` for safe uploads
-- **Modular Architecture** — Separate modules for `auth/`, `crypto/`, `stego/`, `database/`
-- **Flash Messaging** — Full feedback system for success, error, and warning states
+- **NASA EONET Integration** — Live feed of natural events (wildfires, severe storms, volcanoes, droughts).
+- **NASA GIBS Tile Services** — High-resolution VIIRS True Color satellite imagery integration.
+- **CNN Surface Analysis** — Computer vision analysis detecting deforestation, urban expansion, water loss, ice sheet depletion, and desertification.
+- **25-Year NDVI Index** — Long-term Normalized Difference Vegetation Index tracking with automated anomaly flagging.
+- **CO₂ Emission Hotspot Mapping** — TROPOMI/Sentinel-5P style spatial mapping across 10 global industrial corridors.
 
 </details>
+
+<details>
+<summary><strong>🏙️ Urban & Strategic Intelligence</strong></summary>
+
+- **15-City Sustainability Benchmark** — Detailed benchmarking (NYC, London, Tokyo, Singapore, Oslo, etc.) tracking EV adoption, green space %, solar penetration, and waste recycling.
+- **Policy Impact Sandbox** — Legislative intervention simulator modeling carbon taxes, green transport, and smart grid investments with cost/job projections.
+- **Radar Peer Comparison** — Multi-country radar chart analysis across 7 key environmental metrics.
+- **UN SDG Progress Tracker** — Quantitative progress mapping for UN Sustainable Development Goals (SDG 6, 7, 11, 13, 14, 15).
+- **Climate Risk Lab** — Physical and transition risk scoring covering heat stress, flooding, coastal vulnerability, and water scarcity.
+- **Carbon Budget Calculator** — Remaining 1.5°C and 2.0°C global carbon budget depletion timelines.
+
+</details>
+
+<details>
+<summary><strong>👤 Enterprise Controls & Security</strong></summary>
+
+- **Multi-Role Authentication** — Session-based access control supporting Admin, Analyst, and Viewer roles with OTP verification.
+- **Data Export Suite** — One-click CSV and JSON data exporting for external analysis.
+- **Admin Command Center** — System telemetry covering active sessions, API call counts, cache hit rates, and server uptime.
+- **Multilingual Support** — Native UI translations across 9 languages (English, Spanish, French, German, Chinese, Arabic, Hindi, Portuguese).
+
+</details>
+
+---
+
+## 🔄 How It Works
+
+```
+                        [ User Interface / Browser ]
+                                     │
+                 ┌───────────────────┴───────────────────┐
+                 ▼                                       ▼
+        [ HTTP REST Requests ]               [ Server-Sent Events (SSE) ]
+                 │                                       │
+                 └───────────────────┬───────────────────┘
+                                     │
+                                     ▼
+                    ┌─────────────────────────────────┐
+                    │  Hono Web Server (src/index.tsx) │
+                    │  • Auth & Session Engine        │
+                    │  • Neural Projection Engine     │
+                    │  • RL Policy Optimizer (DQN)    │
+                    │  • SHAP Feature Attribution     │
+                    │  • Gemini 1.5 Flash AI Context  │
+                    └────────────────┬────────────────┘
+                                     │
+            ┌────────────────────────┼────────────────────────┐
+            ▼                        ▼                        ▼
+    [ Open-Meteo API ]      [ REST Countries API ]     [ NASA EONET API ]
+   Weather & Air Quality       Country Metadata          Disaster Telemetry
+            │                        │                        │
+            └────────────────────────┼────────────────────────┘
+                                     │
+                                     ▼
+                      ┌─────────────────────────────┐
+                      │ In-Memory Smart TTL Cache   │
+                      └──────────────┬──────────────┘
+                                     │
+                                     ▼
+                      [ Dynamic Response Payload ]
+                                     │
+            ┌────────────────────────┼────────────────────────┐
+            ▼                        ▼                        ▼
+     [ Plotly.js Graphs ]    [ Three.js 3D Globe ]   [ Chart.js Canvas ]
+```
 
 ---
 
@@ -155,21 +191,21 @@ Original Message Recovered
 
 ```mermaid
 graph TD
-    A["User - Web Browser"] -->|HTTP POST /encode| B["Flask app.py"]
-    B --> C["crypto/encrypt.py - AES-256 CBC"]
-    C --> D["stego/embed.py - LSB Bit Embedding"]
-    D --> E["static/uploads/encoded/"]
-    B --> F["database/db.py - SQLite"]
-    F --> G["images table + messages table"]
-    
-    A -->|GET /dashboard| H["Display Vault - All Images"]
-    H -->|Click Access| I["auth/password_utils.py - bcrypt verify"]
-    I -->|Correct Password| J["stego/extract.py - LSB Extraction"]
-    J --> K["crypto/decrypt.py - AES-256 Decrypt"]
-    K --> L["Recovered Secret Message"]
-    
-    B --> M["templates/ - Jinja2 HTML"]
-    M --> N["static/css/style.css"]
+    A["Browser Frontend (Vanilla JS + Tailwind)"] -->|HTTP / SSE| B["Hono Server (src/index.tsx)"]
+    B --> C["Smart TTL Cache (In-Memory)"]
+    B --> D["Auth & Session Management"]
+    B --> E["AI & Neural Engines (LSTM, RL, SHAP)"]
+    B --> F["Live External APIs"]
+    F --> G["Open-Meteo (Weather & AQI)"]
+    F --> H["REST Countries (Geographic Data)"]
+    F --> I["NASA EONET (Natural Events)"]
+    B --> J["Google Gemini 1.5 Flash Engine"]
+    B --> K["Static Asset Delivery (public/static/)"]
+    K --> L["app.js (Frontend Controller)"]
+    K --> M["style.css (Synthwave Design System)"]
+    B --> N["SSE Push Stream"]
+    N --> A
+    B --> O["Edge Deployment (Cloudflare Pages)"]
 ```
 
 ---
@@ -178,66 +214,46 @@ graph TD
 
 | Layer | Technology | Purpose |
 |---|---|---|
-| **Language** | Python 3.10+ | Core application language |
-| **Web Framework** | Flask 3.x | HTTP routing, templates, sessions |
-| **Templating** | Jinja2 (built-in) | HTML rendering with Flask |
-| **Steganography** | Pillow 12.x | Image pixel manipulation (RGB LSB) |
-| **Encryption** | PyCryptodome 3.x | AES-256 CBC mode encryption/decryption |
-| **Password Hashing** | bcrypt 5.x | Secure access password storage |
-| **Database** | SQLite 3 | Lightweight embedded database |
-| **Fonts** | Outfit (Google Fonts) | Clean, modern UI typography |
-| **Icons** | Font Awesome 6.4 | UI iconography |
-| **Animations** | AOS.js 2.3 | Scroll-triggered reveal animations |
-| **Alerts** | SweetAlert2 11 | Styled modal dialogs |
-| **Charts** | Chart.js | Security analytics chart on homepage |
+| **Runtime** | Node.js 22.x | High-performance JavaScript runtime |
+| **Backend Framework** | Hono 4.x | Ultra-fast, edge-compatible web framework |
+| **Language** | TypeScript 5.x | End-to-end static type safety |
+| **Build System** | Vite 6.x | Modern frontend toolchain and dev server |
+| **Edge Deployment** | Cloudflare Pages | Global edge deployment via Wrangler |
+| **AI Intelligence** | Google Gemini 1.5 Flash | Conversational climate AI with system prompt context |
+| **Design System** | Tailwind CSS + Custom CSS | Modern dark-mode Synthwave design system |
+| **3D Rendering** | Three.js 0.162 | WebGL 3D planetary rendering |
+| **Data Visualization** | Plotly.js 2.32 | High-precision scientific graphing |
+| **Chart Engine** | Chart.js 4.4 | Responsive HTML5 canvas charts |
+| **Animation Engine** | GSAP 3.12 | Professional UI micro-animations |
+| **Scroll Reveal** | AOS 2.3 | Scroll-triggered animation effects |
+| **Modal UI** | SweetAlert2 11 | Customized dialog prompts |
+| **Telemetry APIs** | Open-Meteo, REST Countries, NASA EONET | Live environmental data feeds |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-krishi-ai/
+c:\Projects\Ecotwin-main\
 │
-├── app.py                  # Main Flask application — all routes and view logic
-├── config.py               # Configuration: paths, SECRET_KEY, database path
-├── requirements.txt        # Python dependencies: Flask, Pillow, pycryptodome, bcrypt
+├── src/
+│   ├── index.tsx          # Complete backend server: Hono routes, HTML shell, AI logic (~2000 lines)
+│   └── renderer.tsx       # Renderer configuration helper
 │
-├── auth/
-│   └── password_utils.py   # bcrypt hash_password() and verify_password()
+├── public/
+│   └── static/
+│       ├── app.js         # Frontend controller (289KB): UI tabs, Chart.js/Plotly integrations
+│       └── style.css      # Design system (75KB): Synthwave Eco dark theme
 │
-├── crypto/
-│   ├── encrypt.py          # AES-256 CBC encryption (PyCryptodome)
-│   └── decrypt.py          # AES-256 CBC decryption
-│
-├── stego/
-│   ├── embed.py            # LSB steganography — embeds binary data into image pixels
-│   └── extract.py          # LSB extraction — reads hidden binary data from pixels
-│
-├── database/
-│   ├── db.py               # SQLite connection helper (get_db)
-│   ├── init_db.py          # Database initialization script
-│   ├── models.py           # CREATE TABLE statements (images, messages)
-│   └── steg.db             # SQLite database file (auto-created)
-│
-├── templates/
-│   ├── base.html           # Base layout: navbar, footer, flash messages, scripts
-│   ├── index.html          # Homepage: hero, feature cards, security chart
-│   ├── encode.html         # Encode form: image upload + message + passwords
-│   ├── dashboard.html      # Vault: grid of all encoded images
-│   ├── access.html         # Password gate before decoding
-│   └── decode.html         # Decoded message display
-│
-└── static/
-    ├── css/style.css       # Custom dark-mode CSS (7.8KB)
-    ├── img/                # Logo and background images
-    │   ├── logo.png
-    │   ├── hero-bg.png
-    │   ├── encode-bg.png
-    │   └── vault-bg.png
-    └── uploads/            # Stored image files (auto-created)
-        ├── original/       # Original uploaded images
-        └── encoded/        # Steganography-encoded images
+├── package.json           # Dependencies: hono, @google/generative-ai, vite, wrangler
+├── vite.config.ts         # Vite server configuration with Hono Cloudflare adapter
+├── tsconfig.json          # TypeScript compiler options
+├── wrangler.jsonc         # Cloudflare Pages deployment manifest
+├── ecosystem.config.cjs   # PM2 deployment configuration
+└── README.md              # Project documentation
 ```
+
+> **Design Note:** The entire server logic resides within `src/index.tsx`, making the project zero-dependency for traditional Node frameworks and natively deployable to Cloudflare Workers / Pages edge infrastructure.
 
 ---
 
@@ -247,140 +263,212 @@ krishi-ai/
 
 | Requirement | Version | Notes |
 |---|---|---|
-| [Python](https://www.python.org/) | 3.10+ | Required |
-| pip | Latest | Comes with Python |
+| [Node.js](https://nodejs.org/) | 18+ (22.x recommended) | Required |
+| npm | 9+ | Included with Node.js |
+| Gemini API Key | Optional | Required only for live Gemini AI chat |
 
-### Installation
+---
+
+## ⚙️ Environment Setup
+
+Krishi-AI runs out-of-the-box **without requiring mandatory API keys** for all core telemetry, map, simulation, and visualization modules.
+
+To enable live Google Gemini 1.5 Flash AI responses:
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/jeswanth90630/Ecotwin.git
-cd Ecotwin
+# Create a local environment variables file
+echo "GEMINI_API_KEY=your_gemini_api_key_here" > .dev.vars
+```
 
-# 2. (Recommended) Create and activate a virtual environment
-python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux/macOS
+> Get a free API key at [Google AI Studio](https://aistudio.google.com/). If omitted, the platform gracefully alerts the user while keeping all other features active.
 
-# 3. Install dependencies
-pip install -r requirements.txt
+---
 
-# 4. Initialize the database (only needed on first run)
-python database/init_db.py
+## ▶️ How to Run & Build
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Start Development Server
+
+```bash
+npm run dev
+```
+
+Open your browser at **`http://localhost:5173/`**
+
+### 3. Build & Preview Production Bundle
+
+```bash
+# Build production assets
+npm run build
+
+# Preview Cloudflare Pages build locally
+npm run preview
+```
+
+### 4. Deploy to Cloudflare Pages
+
+```bash
+npm run deploy
 ```
 
 ---
 
-## ▶️ How to Run
+## 🔑 Default Credentials
 
-```bash
-python app.py
-# Server starts at: http://127.0.0.1:5000/
-```
-
-The Flask development server starts with debug mode enabled. Open your browser and navigate to `http://127.0.0.1:5000`.
+| Role | Email | Password |
+|---|---|---|
+| **Admin** | `admin@ecotwin.ai` | `admin123` |
+| **Analyst** | `analyst@ecotwin.ai` | `demo123` |
 
 ---
 
-## 📖 Usage
+## 📡 API Reference
 
-### 1. Encode a Message
+All endpoints are hosted on the Hono server instance at `http://localhost:5173`:
 
-1. Go to `http://127.0.0.1:5000/encode`
-2. Upload a PNG or JPG image (must be large enough to hold your message)
-3. Enter your secret message
-4. Set an **Access Password** (used to open this image from the vault)
-5. Set an **Encryption Password** (used to decrypt the hidden message)
-6. Give the image a display name
-7. Click **Encode** — your image is stored in the Secure Vault
+<details>
+<summary><strong>🔐 Authentication Endpoints</strong></summary>
 
-### 2. Decode a Message
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/auth/login` | Authenticate user credentials and return session token |
+| `POST` | `/auth/register` | Register new user account with OTP dispatch |
+| `POST` | `/auth/verify-otp` | Verify OTP code to activate user account |
+| `POST` | `/auth/logout` | Terminate active user session |
+| `GET` | `/auth/me` | Fetch active authenticated user profile |
+| `PUT` | `/auth/profile` | Update profile information (name, org, language) |
 
-1. Go to `http://127.0.0.1:5000/dashboard` (the Vault)
-2. Click on the encoded image you want to access
-3. Enter the **Access Password** to unlock it
-4. Enter the **Encryption Password** to decrypt and reveal the hidden message
+</details>
 
-### 3. Delete an Image
+<details>
+<summary><strong>🌍 Data & Telemetry Endpoints</strong></summary>
 
-From the dashboard, click **Delete** on any image. You must provide the correct **Access Password** to confirm deletion.
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/world_data` | 50-country sustainability dataset enriched with REST Countries API |
+| `GET` | `/realtime` | Live telemetry feed combining Open-Meteo weather and air quality |
+| `GET` | `/realtime/latest` | Single latest telemetry data point |
+| `GET` | `/global_ticker` | Real-time global CO₂ ppm, temperature anomaly, and renewable capacity |
+| `GET` | `/market_data` | Live carbon credit prices (EU ETS), renewable index, and energy rates |
+| `GET` | `/historical/:country` | 15-year historical sustainability trend for selected country |
+| `GET` | `/analytics/enterprise` | Regional aggregates, global KPIs, and monthly trends |
+| `GET` | `/sdg_data` | UN Sustainable Development Goals (SDGs 6, 7, 11, 13, 14, 15) tracking |
+| `GET` | `/anomaly_data` | 30-day environmental anomaly detection dataset |
+| `GET` | `/carbon_budget` | Remaining 1.5°C and 2.0°C carbon budget calculations |
+| `GET` | `/cities` | 15 global city benchmarks with live weather data |
+| `GET` | `/news_feed` | Category and sentiment-filtered sustainability news feed |
+| `GET` | `/planet_health` | 6-dimension composite planetary health index |
+| `GET` | `/co2_race` | Per-country historical CO₂ emissions ranking data (1990–2024) |
+
+</details>
+
+<details>
+<summary><strong>🤖 AI & Simulation Endpoints</strong></summary>
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/simulate_future` | 10-year LSTM neural projection with upper/lower confidence bands |
+| `POST` | `/simulate/compare` | Baseline vs. intervention scenario delta analysis |
+| `GET` | `/simulate/history` | Log of recent simulation executions |
+| `POST` | `/shap/explain` | Game-theoretic SHAP feature attribution breakdown |
+| `POST` | `/rl_optimize` | Deep Q-Network (DQN) reinforcement learning optimization training |
+| `POST` | `/climate_risk` | Physical and transition risk scoring model |
+| `POST` | `/policy_sim` | Policy intervention simulation calculating cost, jobs, and score delta |
+| `POST` | `/peer_compare` | Multi-country radar chart comparison |
+| `POST` | `/ai_query` | Gemini 1.5 Flash AI query engine with real-time system context injection |
+
+</details>
+
+<details>
+<summary><strong>🛰️ Satellite Intelligence Endpoints</strong></summary>
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/satellite/regions` | List of monitored regions with NASA GIBS satellite tile links |
+| `GET` | `/satellite/analyze/:regionId` | Simulated CNN computer vision analysis for a region |
+| `GET` | `/satellite/live_feed` | High-frequency scan feed across all monitored regions |
+| `GET` | `/satellite/global_stats` | Deforestation, urban growth, and ice loss statistics |
+| `GET` | `/satellite/ndvi_timeseries` | 25-year vegetation health index timeseries |
+| `GET` | `/satellite/emission_hotspots` | Spatial CO₂ emission hotspot dataset |
+| `GET` | `/satellite/ml_forecast` | 18-month machine learning risk forecast |
+| `POST` | `/satellite/compare` | Multi-year satellite imagery comparison engine |
+
+</details>
 
 ---
 
-## 📸 Screenshots / Demo
+## 📸 Screenshots & Demo
 
-> **📌 Screenshots not yet added.** Run the application and capture screenshots at these pages, then save them to the paths below:
+> 📌 **Screenshots Section:** Capture high-resolution screenshots of the running platform and save them in the directory structure below to display them automatically:
 
 ```
 docs/
 └── screenshots/
-    ├── 01_home.png          # Homepage with hero section and feature cards
-    ├── 02_encode.png        # Encode form with image upload and password fields
-    ├── 03_dashboard.png     # Secure vault showing all encoded images
-    ├── 04_access.png        # Password gate screen before decoding
-    └── 05_decode.png        # Decoded message reveal screen
-```
-
-Once saved, add to this README:
-```markdown
-![Homepage](docs/screenshots/01_home.png)
-![Encode](docs/screenshots/02_encode.png)
-![Vault](docs/screenshots/03_dashboard.png)
+    ├── 01_dashboard.png          # Main telemetry dashboard with real-time cards
+    ├── 02_world_map.png          # Interactive choropleth map & country drill-down
+    ├── 03_simulator.png          # LSTM 10-year simulation with confidence bands
+    ├── 04_rl_optimizer.png       # Deep Q-Network RL training convergence chart
+    ├── 05_ai_chat.png            # Gemini 1.5 Flash assistant with system context
+    ├── 06_satellite_hub.png      # NASA satellite Hub & CNN computer vision analysis
+    ├── 07_sdg_tracker.png        # UN SDG progress tracking module
+    └── 08_policy_sandbox.png     # Policy intervention sandbox & economic impact
 ```
 
 ---
 
 ## ⚠️ Known Limitations
 
-| Limitation | Details |
+| Component | Note |
 |---|---|
-| **Image size requirement** | The image must be large enough to hold the binary-encoded message (approx. 1 pixel per 3 bits of message) |
-| **PNG recommended** | JPEG compression may corrupt LSB bits; use PNG for reliable encode/decode |
-| **No user authentication** | The vault is shared — any visitor can access the dashboard |
-| **In-process server** | `python app.py` uses Flask's built-in dev server, not suitable for production |
-| **Local storage only** | Uploaded images are stored on the local filesystem |
-| **Hardcoded SECRET_KEY** | `config.py` has a hardcoded secret key — change before deploying |
+| **Session Persistence** | User authentication state is stored in server memory (resets on server restart). |
+| **Neural Simulation Models** | LSTM, RL (DQN), SHAP, and CNN modules run high-fidelity mathematical simulations optimized for client responsiveness. |
+| **External API Caching** | Open-Meteo and REST Countries endpoints utilize TTL in-memory caching to prevent rate-limit throttling. |
+| **Gemini AI Connection** | Requires a free `GEMINI_API_KEY` in `.dev.vars` for live conversational AI responses. |
 
 ---
 
 ## 🔮 Future Improvements
 
-- [ ] **User Authentication** — Per-user vaults with login/register
-- [ ] **JPEG Safe Mode** — Convert JPEG to PNG before embedding to prevent compression artifacts
-- [ ] **Capacity Preview** — Show how many characters the selected image can hold before encoding
-- [ ] **Cloud Storage** — Store images on AWS S3 or Cloudflare R2 instead of local disk
-- [ ] **API Mode** — REST API endpoints for programmatic encode/decode
-- [ ] **Mobile Optimization** — Improved responsive layout for small screens
-- [ ] **Production Deployment** — Gunicorn + Nginx setup documentation
+- [ ] **Persistent Storage Integration** — Transition from in-memory session cache to Cloudflare D1 (SQLite) or PostgreSQL.
+- [ ] **Mapbox GL / deck.gl Layer** — Upgrade the world map to high-resolution geospatial vector tiles.
+- [ ] **WebSocket Telemetry Stream** — Enhance SSE streams with full bidirectional WebSockets for instant control.
+- [ ] **Trained PyTorch Model Inference** — Host pre-trained PyTorch ONNX models directly via Cloudflare Workers AI.
 
 ---
 
 ## 🤝 Contributing
 
+Contributions are always welcome.
+
 ```bash
 # 1. Fork the repository
 # 2. Create a feature branch
-git checkout -b feature/your-feature-name
+git checkout -b feature/amazing-feature
 
-# 3. Make your changes
-# 4. Test thoroughly
-python app.py
+# 3. Commit changes
+git commit -m 'feat: Add amazing feature'
 
-# 5. Submit a pull request
+# 4. Push branch & Open a Pull Request
+git push origin feature/amazing-feature
 ```
 
 ---
 
-## 👤 Author
+## 👤 Author & Developer
 
 <div align="center">
 
-**Built with 🔐 for secure, invisible communication**
+**Developed with 💚 for planetary intelligence and environmental resilience.**
 
-*A demonstration of applied cryptography + steganography + full-stack Python web development.*
+*Designed as a showcase of modern edge architecture, TypeScript engineering, AI integration, and scientific data visualization.*
 
-**[Source Code](https://github.com/jeswanth90630/Ecotwin)** · **[Run Locally](#-how-to-run)**
+[Source Code](https://github.com/jeswanth90630/Ecotwin) · [Run Locally](#-how-to-run--build) · [Cloudflare Deploy](#4-deploy-to-cloudflare-pages)
 
-© 2026 Krishi-AI — Secure Steganographic Communication Platform
+© 2026 Krishi-AI Platform
 
 </div>
