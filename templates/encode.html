@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-container">
+    <div class="container" style="padding-top: 10vw; max-width: 800px;">
+        <div class="text-center" data-aos="fade-down" style="margin-bottom: 3rem;">
+            <h1 class="section-title">Initiate <span class="accent-text">Encoding</span></h1>
+            <p class="section-subtitle">Encode a secret message within an image for secure transmission.</p>
+        </div>
+
+        <div class="card" data-aos="fade-up" style="background: rgba(11, 14, 20, 0.85);">
+            <form action="/encode" method="POST" enctype="multipart/form-data">
+                
+                <div class="form-group text-center">
+                    <label for="image-upload" class="form-label">Step 1: Upload Carrier Image</label>
+                    <div class="upload-box" id="upload-box" onclick="document.getElementById('image-upload').click();">
+                        <i class="fas fa-cloud-upload-alt fa-3x" id="upload-icon"></i>
+                        <p id="upload-text">Click to choose or drag an image here</p>
+                        <img id="image-preview" src="#" alt="Preview" style="display:none; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
+                    </div>
+                    <input type="file" id="image-upload" name="image" accept="image/*" required style="display:none;" onchange="previewImage(event)">
+                </div>
+
+                <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                    <label for="display_name" class="form-label">Step 2: Assign Asset Name</label>
+                    <input type="text" id="display_name" name="display_name" class="form-input" placeholder="e.g. Operation Chimera, Secret Intel #1" required>
+                </div>
+
+                <div class="form-group" data-aos="fade-up" data-aos-delay="150">
+                    <label for="message" class="form-label">Step 3: Hidden Message</label>
+                    <textarea id="message" name="message" class="form-input" rows="4" placeholder="Enter the secret message you want to hide..." required></textarea>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="form-group" data-aos="fade-right" data-aos-delay="200">
+                        <label for="access_password" class="form-label">Vault Access Password</label>
+                        <div style="position: relative;">
+                            <input type="password" id="access_password" name="access_password" class="form-input" placeholder="Set Access Password" required>
+                            <i class="fas fa-eye" id="toggleAccess" onclick="togglePassword('access_password', 'toggleAccess')" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--neon);"></i>
+                        </div>
+                    </div>
+                    <div class="form-group" data-aos="fade-left" data-aos-delay="200">
+                        <label for="encryption_password" class="form-label">Encryption Key</label>
+                        <div style="position: relative;">
+                            <input type="password" id="encryption_password" name="encryption_password" class="form-input" placeholder="Set Decryption Key" required>
+                            <i class="fas fa-eye" id="toggleEncrypt" onclick="togglePassword('encryption_password', 'toggleEncrypt')" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--neon);"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group text-center" style="margin-top: 2rem;">
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1.2rem;">
+                        <i class="fas fa-microchip"></i> SECURE & ENCODE ASSET
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<style>
+    .page-container {
+        min-height: 100vh;
+        background: radial-gradient(circle at center, rgba(11, 10, 9, 0.95), rgba(11, 10, 9, 0.8)),
+                    url('/static/img/encode-bg.png') no-repeat center center/cover;
+    }
+
+    .upload-box {
+        border: 2px dashed rgba(255, 159, 0, 0.3);
+        border-radius: 20px;
+        padding: 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: rgba(11, 10, 9, 0.4);
+    }
+    .upload-box:hover {
+        border-color: var(--neon);
+        background: rgba(11, 10, 9, 0.6);
+        box-shadow: 0 0 20px rgba(255, 159, 0, 0.15);
+    }
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = function(){
+            const preview = document.getElementById('image-preview');
+            const icon = document.getElementById('upload-icon');
+            const text = document.getElementById('upload-text');
+            preview.src = reader.result;
+            preview.style.display = 'block';
+            icon.style.display = 'none';
+            text.style.display = 'none';
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+{% endblock %}

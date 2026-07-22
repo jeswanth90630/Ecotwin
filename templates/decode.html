@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-container container" style="max-width: 800px;">
+    <div class="text-center" data-aos="fade-down" style="margin-bottom: 3rem;">
+        <h1 class="section-title">Message <span class="accent-text">Extraction</span></h1>
+        <p class="section-subtitle">Decrypt the hidden data within this high-integrity steganographic carrier. <br><span class="accent-text" style="font-size: 0.9rem;">Identity Verified • Image Clarified</span></p>
+    </div>
+
+    {% if message %}
+        <div class="card text-center" data-aos="zoom-in" style="background: rgba(11, 10, 9, 0.85);">
+            <i class="fas fa-lock-open fa-4x" style="color: var(--neon); margin-bottom: 2rem;"></i>
+            <h3 class="section-title">Decrypted <span class="accent-text">Successfully</span></h3>
+            
+            <div style="background: rgba(11, 10, 9, 0.6); border-radius: 12px; margin-top: 2rem; padding: 2rem; text-align: left; position: relative; border: 1px solid var(--glass-border);">
+                <label class="form-label" style="opacity: 0.7;">Hidden Message Content</label>
+                <div style="font-size: 1.4rem; font-weight: 600; color: #fff; letter-spacing: 0.5px;">
+                    {{ message }}
+                </div>
+                <button onclick="copyToClipboard('{{ message }}')" class="btn-primary" style="position: absolute; right: 1rem; top: 1rem; padding: 0.6rem 1rem; border-radius: 8px;">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+            
+            <div style="margin-top: 3rem; display: flex; gap: 1.5rem; justify-content: center;">
+                <a href="/dashboard" class="btn-primary" style="background: var(--glass); border: 1px solid var(--neon);">
+                    <i class="fas fa-arrow-left"></i> RETURN TO ARCHIVE
+                </a>
+                
+                <button onclick="showDeleteConfirm()" class="btn-primary" style="background: rgba(220, 38, 38, 0.2); border: 1px solid #dc2626; color: #ef4444;">
+                    <i class="fas fa-trash-alt"></i> PURGE IMAGE
+                </button>
+            </div>
+        </div>
+
+        <script>
+            function showDeleteConfirm() {
+                Swal.fire({
+                    title: 'Purge Image #STG-0{{ image["id"] }}?',
+                    text: "Permanent deletion of data from server archive.",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#dc2626',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'CONFIRM PURGE',
+                    background: '#0B0A09',
+                    color: '#FFFBEB',
+                    html: `
+                        <div style="position: relative; margin-top: 20px;">
+                            <input type='password' id='swal-access-pass' class='swal2-input' placeholder='Vault Access Code' style='background: #161311; color: #fff; border: 1px solid var(--neon); width: 85%; padding-right: 40px;'>
+                            <i id="eye-swal" class="fas fa-eye" onclick="toggleSwalPass()" style="position: absolute; right: 10%; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--neon);"></i>
+                        </div>
+                        <form id='delete-form' action='/delete/{{ image["id"] }}' method='POST' style="display:none;">
+                            <input type='hidden' id='final-access-pass' name='access_password'>
+                        </form>
+                    `,
+                    preConfirm: () => {
+                        const password = document.getElementById('swal-access-pass').value;
+                        if (!password) {
+                            Swal.showValidationMessage(`Vault Access Code Required`);
+                        }
+                        return password;
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        document.getElementById('final-access-pass').value = result.value;
+                        document.getElementById('delete-form').submit();
+                    }
+                });
+            }
+
+            function toggleSwalPass() {
+                const input = document.getElementById('swal-access-pass');
+                const icon = document.getElementById('eye-swal');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            }
+        </script>
+    {% else %}
+        <div class="card" data-aos="fade-up" style="background: rgba(11, 10, 9, 0.85);">
+            <div style="margin-bottom: 2rem; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+                <div style="background: var(--gradient-primary); padding: 1rem; display: flex; align-items: center; gap: 1rem; color: var(--deep); font-weight: 700;">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Secure Carrier Identity Verified: #STG-0{{ image['id'] }}</span>
+                </div>
+                <div style="padding: 0; background: rgba(0,0,0,0.2); text-align: center;">
+                    <img id="carrier-preview" src="/static/uploads/encoded/{{ image['image_name'] }}" alt="Carrier Image" style="width: 100%; height: 350px; object-fit: cover;">
+                </div>
+            </div>
+
+            <form action="" method="POST">
+                <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                    <label for="encryption_password" class="form-label">Extraction Key (AES-256)</label>
+                    <div style="position: relative;">
+                        <input type="password" id="encryption_password" name="encryption_password" class="form-input" placeholder="Enter Message Encryption Key" required style="padding-left: 3rem; padding-right: 3rem;">
+                        <i class="fas fa-key" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--neon);"></i>
+                        <i class="fas fa-eye" id="toggleD" onclick="togglePassword('encryption_password', 'toggleD')" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--neon);"></i>
+                    </div>
+                </div>
+
+                <div class="form-group text-center" style="margin-top: 2rem;">
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                        <i class="fas fa-unlock-alt"></i> START EXTRACTION PROCESS
+                    </button>
+                </div>
+            </form>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Data Copied to Clipboard',
+                background: '#0B0A09',
+                color: '#FFFBEB',
+                confirmButtonColor: '#FF9F00',
+                timer: 1500,
+                showConfirmButton: false
+            });
+        });
+    }
+</script>
+{% endblock %}

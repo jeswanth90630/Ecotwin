@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="hero">
+    <div class="container hero-container">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">Secure. <br> Hidden. <br> <span class="accent-text">Invisible.</span></h1>
+            
+            <div class="hero-tagline">
+                Experience the next generation of <b>secure communication</b> with <b>STEG</b>. Encode your most sensitive messages within ordinary images using advanced <b>AES encryption</b> and <b>LSB steganography</b>.
+            </div>
+            
+            <div class="hero-actions">
+                <a href="/encode" class="btn-primary">
+                    <i class="fas fa-plus-circle"></i> GET STARTED
+                </a>
+                <a href="/dashboard" class="btn-secondary-glow" style="margin-left: 1.5rem;">
+                    <i class="fas fa-shield-alt"></i> GO TO VAULT
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features container" style="padding: 100px 0;">
+    <div class="text-center" data-aos="fade-up">
+        <h2 class="section-title">Why Trust <span class="accent-text">STEG</span>?</h2>
+        <p class="section-subtitle">A high-end cybersecurity tool designed for ultimate privacy.</p>
+    </div>
+    
+    <div class="vault-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-fingerprint fa-3x" style="color: var(--neon); margin-bottom: 1.5rem;"></i>
+            <h3>Advanced Encryption</h3>
+            <p>Our system uses industry-standard AES-256 encryption to ensure that even if the image is analyzed, your message remains secure.</p>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-eye-slash fa-3x" style="color: var(--neon); margin-bottom: 1.5rem; opacity: 0.8;"></i>
+            <h3>Stealth Technology</h3>
+            <p>LSB (Least Significant Bit) steganography modifies the image so subtly that it's nearly impossible for the human eye to detect.</p>
+        </div>
+        
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-database fa-3x" style="color: var(--neon); margin-bottom: 1.5rem; opacity: 0.6;"></i>
+            <h3>Secure Vault</h3>
+            <p>Maintain your personal repository of encoded images with multi-factor password protection for both access and decryption.</p>
+        </div>
+    </div>
+</section>
+
+<section class="analytics container" style="padding-bottom: 100px;">
+    <div class="card" data-aos="zoom-in">
+        <div style="display: flex; gap: 3rem; align-items: center; justify-content: space-between;">
+            <div style="flex: 1;">
+                <h2 class="section-title">Security <span class="accent-text">Insights</span></h2>
+                <p>Monitor your communication security levels. STEG provides real-time analytics on encryption strength and image degradation.</p>
+                <canvas id="securityChart" width="400" height="200" style="margin-top: 2rem;"></canvas>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Security Guard" style="width: 80%; border-radius: 50%; filter: drop-shadow(0 0 30px var(--neon));">
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const ctx = document.getElementById('securityChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+            datasets: [{
+                label: 'Encryption Strength (AES-256)',
+                data: [95, 96, 94, 98, 97, 99, 100],
+                borderColor: '#FF9F00',
+                backgroundColor: 'rgba(255, 159, 0, 0.1)',
+                fill: true,
+                tension: 0.4
+            }, {
+                label: 'Stealth Integrity',
+                data: [88, 90, 89, 92, 91, 93, 100],
+                borderColor: '#FF5E00',
+                backgroundColor: 'rgba(255, 94, 0, 0.1)',
+                fill: true,
+                tension: 0.4
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    labels: { color: '#FFFBEB' }
+                }
+            },
+            scales: {
+                y: { ticks: { color: '#FFFBEB' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                x: { ticks: { color: '#FFFBEB' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+            }
+        }
+    });
+</script>
+{% endblock %}

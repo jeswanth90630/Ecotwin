@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="page-container container" style="max-width: 600px;">
+    <div class="text-center" data-aos="fade-down" style="margin-bottom: 3rem;">
+        <h1 class="section-title">Vault <span class="accent-text">Entry</span></h1>
+        <p class="section-subtitle">Please verify your credentials to access the encrypted data.</p>
+    </div>
+
+    <div class="card" data-aos="zoom-in" style="background: rgba(11, 10, 9, 0.85);">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <div style="position: relative; overflow: hidden; border-radius: 15px; height: 200px; margin-bottom: 1.5rem; border: 2px solid var(--glass-border);">
+                <img src="/static/uploads/encoded/{{ image['image_name'] }}" alt="Encoded Image" style="width: 100%; height: 100%; object-fit: cover; filter: blur(20px);">
+                <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3);">
+                    <i class="fas fa-lock fa-3x" style="color: var(--neon); opacity: 0.8;"></i>
+                </div>
+            </div>
+            <h3>Asset: <span class="accent-text">{{ image['display_name'] or 'Unknown' }}</span></h3>
+            <p style="opacity: 0.6; font-size: 0.9rem;">Security Reference: STG-0{{ image['id'] }}</p>
+        </div>
+
+        <form action="/access/{{ image['id'] }}" method="POST">
+            <div class="form-group" data-aos="fade-up" data-aos-delay="100">
+                <label for="access_password" class="form-label">Vault Access Password</label>
+                <div style="position: relative;">
+                    <i class="fas fa-fingerprint" style="position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--neon);"></i>
+                    <input type="password" id="access_password" name="access_password" class="form-input" placeholder="Your Security Key" required style="padding-left: 3.2rem; padding-right: 3rem;">
+                    <i class="fas fa-eye" id="toggleP" onclick="togglePassword('access_password', 'toggleP')" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--neon);"></i>
+                </div>
+            </div>
+
+            <div class="form-group text-center" style="margin-top: 2rem;">
+                <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                    <i class="fas fa-lock-open"></i> AUTHORIZE DECODE ACCESS
+                </button>
+            </div>
+            
+            <a href="/dashboard" class="nav-link text-center" style="display: block; opacity: 0.6;">
+                <i class="fas fa-chevron-left"></i> RETURN TO ARCHIVE
+            </a>
+        </form>
+    </div>
+</section>
+{% endblock %}
