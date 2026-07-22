@@ -2,9 +2,9 @@
 
 <br/>
 
-<h1>🌱 Krishi-AI</h1>
+<h1>🌿 EcoTwin AI</h1>
 
-<h3><em>AI-Powered Digital Twin & Planetary Sustainability Intelligence Platform</em></h3>
+<h3><em>AI Digital Sustainability & Planetary Intelligence Platform</em></h3>
 
 <p>A full-stack AI platform that monitors, simulates, and forecasts<br/>the environmental health of 50+ nations and 15+ global cities in real time.</p>
 
@@ -28,8 +28,8 @@
 ## 📋 Table of Contents
 
 - [Overview](#-overview)
-- [The Problem Krishi-AI Addresses](#-the-problem-krishi-ai-addresses)
-- [Solution](#-solution--what-krishi-ai-delivers)
+- [The Problem EcoTwin AI Addresses](#-the-problem-ecotwin-ai-addresses)
+- [Solution](#-solution--what-ecotwin-ai-delivers)
 - [Key Features](#-key-features)
 - [How It Works](#-how-it-works)
 - [Architecture & Data Flow](#-architecture--data-flow)
@@ -49,16 +49,16 @@
 
 ## 🌍 Overview
 
-**Krishi-AI** is a high-performance, AI-driven sustainability intelligence platform engineered for environmental telemetry, multi-scenario simulation, and climate policy optimization.
+**EcoTwin AI** is a high-performance, AI-driven sustainability intelligence platform engineered for environmental telemetry, multi-scenario simulation, and climate policy optimization.
 
-Built as an edge-compatible full-stack web application powered by **Hono**, **TypeScript**, and **Vite**, Krishi-AI aggregates real-time telemetry from multiple global environmental APIs, applies neural simulation models (LSTM, RL, SHAP, Anomaly Detection), and delivers actionable analytics via hardware-accelerated 3D WebGL visualizations and interactive dashboards.
+Built as an edge-compatible full-stack web application powered by **Hono**, **TypeScript**, and **Vite**, EcoTwin AI aggregates real-time telemetry from multiple global environmental APIs, applies neural simulation models (LSTM, RL, SHAP, Anomaly Detection), and delivers actionable analytics via hardware-accelerated 3D WebGL visualizations and interactive dashboards.
 
-> **Recruiter 30-Second Summary:**
-> **Krishi-AI** → Aggregates live weather, air quality, NASA disaster telemetry, and carbon market data → Runs 10-year LSTM neural simulations and Deep Q-Network RL policy optimization → Integrates Google Gemini 1.5 Flash for live-context AI Q&A → Deploys seamlessly to Cloudflare Pages edge network.
+> **💡 Recruiter Summary (30-Second Snapshot):**
+> **EcoTwin AI** → Aggregates live weather, air quality, NASA disaster telemetry, and carbon market data → Runs 10-year LSTM neural simulations and Deep Q-Network RL policy optimization → Integrates Google Gemini 1.5 Flash for live-context AI Q&A → Deploys seamlessly to Cloudflare Pages edge network.
 
 ---
 
-## ❗ The Problem Krishi-AI Addresses
+## ❗ The Problem EcoTwin AI Addresses
 
 Global environmental data is fragmented, locked behind siloed databases, and rarely decision-ready. Policymakers, sustainability analysts, and researchers face critical challenges:
 
@@ -69,11 +69,11 @@ Global environmental data is fragmented, locked behind siloed databases, and rar
 
 ---
 
-## ✅ Solution — What Krishi-AI Delivers
+## ✅ Solution — What EcoTwin AI Delivers
 
-Krishi-AI solves these problems through an integrated digital twin architecture:
+EcoTwin AI solves these problems through an integrated digital twin architecture:
 
-| Problem | Krishi-AI Solution |
+| Problem | EcoTwin AI Solution |
 |---|---|
 | Isolated climate datasets | Live API aggregation: Open-Meteo Weather & AQI, REST Countries, NASA EONET |
 | Static non-predictive views | LSTM Neural Simulator predicting 10-year environmental trajectories with confidence bands |
@@ -234,7 +234,7 @@ graph TD
 ## 📁 Project Structure
 
 ```
-c:\Projects\Ecotwin-main\
+Ecotwin-main/
 │
 ├── src/
 │   ├── index.tsx          # Complete backend server: Hono routes, HTML shell, AI logic (~2000 lines)
@@ -253,8 +253,6 @@ c:\Projects\Ecotwin-main\
 └── README.md              # Project documentation
 ```
 
-> **Design Note:** The entire server logic resides within `src/index.tsx`, making the project zero-dependency for traditional Node frameworks and natively deployable to Cloudflare Workers / Pages edge infrastructure.
-
 ---
 
 ## 🚀 Getting Started
@@ -271,7 +269,7 @@ c:\Projects\Ecotwin-main\
 
 ## ⚙️ Environment Setup
 
-Krishi-AI runs out-of-the-box **without requiring mandatory API keys** for all core telemetry, map, simulation, and visualization modules.
+EcoTwin AI runs out-of-the-box **without requiring mandatory API keys** for all core telemetry, map, simulation, and visualization modules.
 
 To enable live Google Gemini 1.5 Flash AI responses:
 
@@ -279,8 +277,6 @@ To enable live Google Gemini 1.5 Flash AI responses:
 # Create a local environment variables file
 echo "GEMINI_API_KEY=your_gemini_api_key_here" > .dev.vars
 ```
-
-> Get a free API key at [Google AI Studio](https://aistudio.google.com/). If omitted, the platform gracefully alerts the user while keeping all other features active.
 
 ---
 
@@ -327,120 +323,6 @@ npm run deploy
 
 ---
 
-## 📡 API Reference
-
-All endpoints are hosted on the Hono server instance at `http://localhost:5173`:
-
-<details>
-<summary><strong>🔐 Authentication Endpoints</strong></summary>
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/auth/login` | Authenticate user credentials and return session token |
-| `POST` | `/auth/register` | Register new user account with OTP dispatch |
-| `POST` | `/auth/verify-otp` | Verify OTP code to activate user account |
-| `POST` | `/auth/logout` | Terminate active user session |
-| `GET` | `/auth/me` | Fetch active authenticated user profile |
-| `PUT` | `/auth/profile` | Update profile information (name, org, language) |
-
-</details>
-
-<details>
-<summary><strong>🌍 Data & Telemetry Endpoints</strong></summary>
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/world_data` | 50-country sustainability dataset enriched with REST Countries API |
-| `GET` | `/realtime` | Live telemetry feed combining Open-Meteo weather and air quality |
-| `GET` | `/realtime/latest` | Single latest telemetry data point |
-| `GET` | `/global_ticker` | Real-time global CO₂ ppm, temperature anomaly, and renewable capacity |
-| `GET` | `/market_data` | Live carbon credit prices (EU ETS), renewable index, and energy rates |
-| `GET` | `/historical/:country` | 15-year historical sustainability trend for selected country |
-| `GET` | `/analytics/enterprise` | Regional aggregates, global KPIs, and monthly trends |
-| `GET` | `/sdg_data` | UN Sustainable Development Goals (SDGs 6, 7, 11, 13, 14, 15) tracking |
-| `GET` | `/anomaly_data` | 30-day environmental anomaly detection dataset |
-| `GET` | `/carbon_budget` | Remaining 1.5°C and 2.0°C carbon budget calculations |
-| `GET` | `/cities` | 15 global city benchmarks with live weather data |
-| `GET` | `/news_feed` | Category and sentiment-filtered sustainability news feed |
-| `GET` | `/planet_health` | 6-dimension composite planetary health index |
-| `GET` | `/co2_race` | Per-country historical CO₂ emissions ranking data (1990–2024) |
-
-</details>
-
-<details>
-<summary><strong>🤖 AI & Simulation Endpoints</strong></summary>
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `POST` | `/simulate_future` | 10-year LSTM neural projection with upper/lower confidence bands |
-| `POST` | `/simulate/compare` | Baseline vs. intervention scenario delta analysis |
-| `GET` | `/simulate/history` | Log of recent simulation executions |
-| `POST` | `/shap/explain` | Game-theoretic SHAP feature attribution breakdown |
-| `POST` | `/rl_optimize` | Deep Q-Network (DQN) reinforcement learning optimization training |
-| `POST` | `/climate_risk` | Physical and transition risk scoring model |
-| `POST` | `/policy_sim` | Policy intervention simulation calculating cost, jobs, and score delta |
-| `POST` | `/peer_compare` | Multi-country radar chart comparison |
-| `POST` | `/ai_query` | Gemini 1.5 Flash AI query engine with real-time system context injection |
-
-</details>
-
-<details>
-<summary><strong>🛰️ Satellite Intelligence Endpoints</strong></summary>
-
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/satellite/regions` | List of monitored regions with NASA GIBS satellite tile links |
-| `GET` | `/satellite/analyze/:regionId` | Simulated CNN computer vision analysis for a region |
-| `GET` | `/satellite/live_feed` | High-frequency scan feed across all monitored regions |
-| `GET` | `/satellite/global_stats` | Deforestation, urban growth, and ice loss statistics |
-| `GET` | `/satellite/ndvi_timeseries` | 25-year vegetation health index timeseries |
-| `GET` | `/satellite/emission_hotspots` | Spatial CO₂ emission hotspot dataset |
-| `GET` | `/satellite/ml_forecast` | 18-month machine learning risk forecast |
-| `POST` | `/satellite/compare` | Multi-year satellite imagery comparison engine |
-
-</details>
-
----
-
-## 📸 Screenshots & Demo
-
-> 📌 **Screenshots Section:** Capture high-resolution screenshots of the running platform and save them in the directory structure below to display them automatically:
-
-```
-docs/
-└── screenshots/
-    ├── 01_dashboard.png          # Main telemetry dashboard with real-time cards
-    ├── 02_world_map.png          # Interactive choropleth map & country drill-down
-    ├── 03_simulator.png          # LSTM 10-year simulation with confidence bands
-    ├── 04_rl_optimizer.png       # Deep Q-Network RL training convergence chart
-    ├── 05_ai_chat.png            # Gemini 1.5 Flash assistant with system context
-    ├── 06_satellite_hub.png      # NASA satellite Hub & CNN computer vision analysis
-    ├── 07_sdg_tracker.png        # UN SDG progress tracking module
-    └── 08_policy_sandbox.png     # Policy intervention sandbox & economic impact
-```
-
----
-
-## ⚠️ Known Limitations
-
-| Component | Note |
-|---|---|
-| **Session Persistence** | User authentication state is stored in server memory (resets on server restart). |
-| **Neural Simulation Models** | LSTM, RL (DQN), SHAP, and CNN modules run high-fidelity mathematical simulations optimized for client responsiveness. |
-| **External API Caching** | Open-Meteo and REST Countries endpoints utilize TTL in-memory caching to prevent rate-limit throttling. |
-| **Gemini AI Connection** | Requires a free `GEMINI_API_KEY` in `.dev.vars` for live conversational AI responses. |
-
----
-
-## 🔮 Future Improvements
-
-- [ ] **Persistent Storage Integration** — Transition from in-memory session cache to Cloudflare D1 (SQLite) or PostgreSQL.
-- [ ] **Mapbox GL / deck.gl Layer** — Upgrade the world map to high-resolution geospatial vector tiles.
-- [ ] **WebSocket Telemetry Stream** — Enhance SSE streams with full bidirectional WebSockets for instant control.
-- [ ] **Trained PyTorch Model Inference** — Host pre-trained PyTorch ONNX models directly via Cloudflare Workers AI.
-
----
-
 ## 🤝 Contributing
 
 Contributions are always welcome.
@@ -467,8 +349,6 @@ git push origin feature/amazing-feature
 
 *Designed as a showcase of modern edge architecture, TypeScript engineering, AI integration, and scientific data visualization.*
 
-[Source Code](https://github.com/jeswanth90630/Ecotwin) · [Run Locally](#-how-to-run--build) · [Cloudflare Deploy](#4-deploy-to-cloudflare-pages)
-
-© 2026 Krishi-AI Platform
+© 2026 EcoTwin AI Platform
 
 </div>
